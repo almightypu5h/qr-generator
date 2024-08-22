@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>QR Code Generator</h1>
+        <div id="qrCodeContainer"></div>
+        <button id="downloadButton" style="margin-bottom: 5px;" onclick="downloadQRCode()">Download QR</button>
+        <button onclick="goBack()">Go Back</button>
+    </div>
+
+
+    <script>
+        function goBack() {
+            window.location.href = '/';
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const params = new URLSearchParams(window.location.search);
+            const qrCodeImage = params.get('qrCodeImage');
+            if (qrCodeImage) {
+                document.getElementById('qrCodeContainer').innerHTML = `<img src="${qrCodeImage}" alt="Generated QR Code">`;
+            }
+        });
+
+        function downloadQRCode() {
+            const qrCodeImage = document.querySelector('#qrCodeContainer img').src;
+            const a = document.createElement('a');
+            a.href = qrCodeImage;
+            a.download = 'qrcode.png';
+            a.click();
+        }
+
+    </script>
+</body>
+
+</html>

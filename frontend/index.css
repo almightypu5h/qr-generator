@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #3b3b3b;
+}
+
+.container {
+    display: flex;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: scale(2);
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 300px;
+    border-radius: 25px;
+    border: none;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00ff48;
+}
+
+button:active {
+    background-color: #ff0419;
+    transform: scale(0.95);
+    transition: ease-in-out 0.1s;
+}
+
+img {
+    margin: 20px 0;
+}
+
+
+/* Default styles for all devices */
+
+/* Styles for devices with a maximum width of 768px (typical smartphones in portrait mode) */
+@media only screen and (max-width: 768px) {
+
+    /* Adjust styles for smaller screens */
+    body {
+        font-size: 14px;
+        /* Example: Decrease font size for readability on smaller screens */
+    }
+
+    /* Example: Adjust layout for smaller screens */
+    .container {
+        width: 90%;
+        /* Example: Make the container narrower on smaller screens */
+        margin: 0 auto;
+    }
+}
+
+/* Additional media queries can be added for specific device orientations or resolutions */
+
+/* Example: Media query for landscape orientation */
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+
+    /* Adjust styles for landscape orientation */
+    .container {
+        width: 100%;
+        transform: scale(1);
+        /* Example: Adjust layout for landscape orientation */
+    }
+}
+
+/* Example: Media query for even smaller devices such as older smartphones or specific resolutions */
+@media only screen and (max-width: 480px) {
+
+    /* Adjust styles for smaller screens */
+    body {
+        font-size: 12px;
+        /* Example: Further decrease font size for smaller screens */
+    }
+
+    .container {
+        width: 95%;
+        transform: scale(1);
+        /* Example: Adjust container width for very small screens */
+    }
+}
